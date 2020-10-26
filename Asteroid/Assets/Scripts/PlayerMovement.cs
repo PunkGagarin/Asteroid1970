@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
 
@@ -30,7 +28,8 @@ public class PlayerMovement : MonoBehaviour {
 
     private void FixedUpdate() {
         rb.AddRelativeForce(Vector2.up * moveDirection * moveSpeed);
-        rb.AddTorque(turnDirection * turnSpeed);
+        //rb.AddTorque(turnDirection * turnSpeed); // -> We can simulate more "space" rotation
+        transform.Rotate(Vector3.forward * turnDirection * turnSpeed * Time.fixedDeltaTime); // or we can use direct rotation
     }
 
     private void ScreenWrap() {
