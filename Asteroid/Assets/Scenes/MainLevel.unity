@@ -686,7 +686,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 98a225aef632938429dfde0d84b3fe84, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5383935, g: 0.4774831, b: 0.6981132, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1008,7 +1008,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 590cf1dfbc9cf4743bb965ed5c9e0b2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 200
   deathEffect: {fileID: 2072576476447276379, guid: 7a0ac16e4fb1a994085bf65f20d81806, type: 3}
   hpBar: {fileID: 1273326022}
 --- !u!70 &884439285
@@ -1104,19 +1104,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnArray:
   - spawnPrefab: {fileID: 8391299118151159566, guid: b0ac6911c84d7814faa478a527da6393, type: 3}
-    spawnSpeed: 100
+    spawnSpeed: 5
     speed: 0.5
   - spawnPrefab: {fileID: 5890215170322528242, guid: 4a1bf7a76fa1b87458c66cb57e5086cd, type: 3}
-    spawnSpeed: 100
+    spawnSpeed: 2
     speed: 1
   - spawnPrefab: {fileID: 5890215170322528242, guid: 4a1bf7a76fa1b87458c66cb57e5086cd, type: 3}
-    spawnSpeed: 100
+    spawnSpeed: 3
     speed: 1
   - spawnPrefab: {fileID: 2316402426212685139, guid: 4a89c778108166c4c9a3ba1e48e26032, type: 3}
-    spawnSpeed: 3
+    spawnSpeed: 10
     speed: 0.3
   - spawnPrefab: {fileID: 3899105917060380729, guid: b8e8c7a430cc3b24fbd9a431c6e5dea0, type: 3}
-    spawnSpeed: 100
+    spawnSpeed: 1.5
     speed: 1
   leftSide: 19.5
   topSide: 15

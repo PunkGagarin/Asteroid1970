@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8484025212866009990}
   - component: {fileID: 449360742351771789}
   - component: {fileID: 8346909034689678366}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: UFO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7158459636683696523}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
