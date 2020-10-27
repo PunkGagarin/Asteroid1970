@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreManager : MonoBehaviour
-{
+public class ScoreManager : MonoBehaviour {
 
     public Text textNumber;
 
@@ -24,17 +23,23 @@ public class ScoreManager : MonoBehaviour
     #endregion
 
     private void Awake() {
-        if(instance == null) {
+        if (instance == null) {
             instance = this;
         }
     }
 
-    void Update()
-    {
+    void Update() {
         textNumber.text = totalScore.ToString();
     }
 
     public void AddScore(int score) {
         totalScore += score;
+    }
+
+    public void CheckHighScore() {
+        int currentHighScore = PlayerPrefs.GetInt("highScore", 0);
+        if (totalScore > currentHighScore) {
+            PlayerPrefs.SetInt("highScore", totalScore);
+        }
     }
 }
