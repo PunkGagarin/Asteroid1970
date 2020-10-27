@@ -4,6 +4,7 @@ public class Enemy : MonoBehaviour
 {
 
     public int health = 100;
+    public int score = 50;
 
     public GameObject deathEffect;
 
@@ -20,6 +21,7 @@ public class Enemy : MonoBehaviour
             GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(effect, 1f);
         }
+        ScoreManager.GetInstance.AddScore(score);
         Destroy(gameObject);
     }
 }
