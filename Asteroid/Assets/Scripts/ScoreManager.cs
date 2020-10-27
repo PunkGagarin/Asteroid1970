@@ -6,11 +6,12 @@ public class ScoreManager : MonoBehaviour {
     public Text textNumber;
 
     [HideInInspector]
-    public int totalScore = 0;
+    public int currentScore = 0;
 
     private static ScoreManager instance;
 
     public static ScoreManager GetInstance { get { return instance; } }
+    public int GetCurrentScore { get { return currentScore; } }
 
     #region delegate
     //Here we can use a delegate Event, for example:
@@ -29,17 +30,24 @@ public class ScoreManager : MonoBehaviour {
     }
 
     void Update() {
-        textNumber.text = totalScore.ToString();
+        textNumber.text = currentScore.ToString();
     }
 
     public void AddScore(int score) {
-        totalScore += score;
+        currentScore += score;
     }
 
     public void CheckHighScore() {
         int currentHighScore = PlayerPrefs.GetInt("highScore", 0);
-        if (totalScore > currentHighScore) {
-            PlayerPrefs.SetInt("highScore", totalScore);
+
+        if (currentScore > currentHighScore) {
+            PlayerPrefs.SetInt("highScore", currentScore);
+            Debug.Log("currentScore: " + currentScore +  " highScore: " + GetHighScore());
         }
+
+    }
+
+    public int GetHighScore() {
+        return PlayerPrefs.GetInt("highScore", 0);
     }
 }
