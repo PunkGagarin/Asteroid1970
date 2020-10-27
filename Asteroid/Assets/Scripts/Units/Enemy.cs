@@ -37,6 +37,7 @@ public class Enemy : HealthUnit {
             GameObject childAsteroid = Instantiate(childSpawn, transform.position, Quaternion.identity);
             childAsteroid.GetComponent<Rigidbody2D>()
                 .AddForce(new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)) * childSpeed, ForceMode2D.Impulse);
+            Destroy(childAsteroid, 15f);
         }
     }
 
