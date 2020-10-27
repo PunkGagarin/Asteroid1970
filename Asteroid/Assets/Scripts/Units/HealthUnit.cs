@@ -12,8 +12,6 @@ public class HealthUnit : MonoBehaviour {
     }
 
     protected virtual void Die() {
-        Debug.Log(transform.name + " just died.");
-
         if (deathEffect != null) {
             GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(effect, 1f);

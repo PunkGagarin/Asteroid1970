@@ -12,21 +12,30 @@ public class PlayerMovement : MonoBehaviour {
     public float screenRight = 21;
     public float screenLeft = -21;
 
+    GameManager gameManager;
+
     float moveDirection;
     float turnDirection;
 
-    //todo: Add a mouse rotation controller
 
-    // Update is called once per frame
+    private void Start() {
+        gameManager = GameManager.GetInstance;
+    }
     void Update() {
+        if (gameManager.isGameOver)
+            return;
+
         moveDirection = Input.GetAxis("Vertical");
         turnDirection = -Input.GetAxis("Horizontal");
 
         ScreenWrap();
-        
+
     }
 
     private void FixedUpdate() {
+        if (gameManager.isGameOver)
+            return;
+
         rb.AddRelativeForce(Vector2.up * moveDirection * moveSpeed);
         //rb.AddTorque(turnDirection * turnSpeed); // -> We can simulate more "space" rotation
         transform.Rotate(Vector3.forward * turnDirection * turnSpeed * Time.fixedDeltaTime); // or we can use direct rotation

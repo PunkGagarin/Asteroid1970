@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour {
     public GameObject gameOverUI;
     public Text currentScore;
     public Text highScore;
+    public bool isGameOver = false;
 
     ScoreManager scoreManager;
 
@@ -27,6 +28,7 @@ public class GameManager : MonoBehaviour {
     }
 
     public void GameOver() {
+        isGameOver = true;
         scoreManager.CheckHighScore();
 
         currentScore.text = "CURRENT SCORE: " + scoreManager.GetCurrentScore;

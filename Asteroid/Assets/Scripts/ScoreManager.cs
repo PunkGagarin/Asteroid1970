@@ -42,9 +42,7 @@ public class ScoreManager : MonoBehaviour {
 
         if (currentScore > currentHighScore) {
             PlayerPrefs.SetInt("highScore", currentScore);
-            Debug.Log("currentScore: " + currentScore +  " highScore: " + GetHighScore());
         }
-
     }
 
     public int GetHighScore() {
