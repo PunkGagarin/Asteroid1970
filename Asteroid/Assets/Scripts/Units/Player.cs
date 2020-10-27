@@ -2,8 +2,19 @@
 using UnityEngine.UI;
 
 public class Player : HealthUnit {
-    private const int CollissionPlayerDamage = 1;
     public GameObject hpBar;
+
+    #region Singleton
+    private static Player instance;
+
+    public static Player GetInstance { get { return instance; } }
+
+    private void Awake() {
+        if (instance == null) {
+            instance = this;
+        }
+    }
+    #endregion
 
     GameManager gameManager;
 
@@ -33,6 +44,6 @@ public class Player : HealthUnit {
 
         GameManager.GetInstance.GameOver();
 
-        Destroy(gameObject, .5f);
+        Destroy(gameObject);
     }
 }

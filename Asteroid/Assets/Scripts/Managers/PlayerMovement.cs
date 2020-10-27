@@ -41,6 +41,10 @@ public class PlayerMovement : MonoBehaviour {
         transform.Rotate(Vector3.forward * turnDirection * turnSpeed * Time.fixedDeltaTime); // or we can use direct rotation
     }
 
+    /**
+     * We wrap a screen, so if a player move out 
+     * he will be teleported in an opposite direction
+     */
     private void ScreenWrap() {
         Vector2 newPosition = transform.position;
         if (transform.position.y > screenTop) {

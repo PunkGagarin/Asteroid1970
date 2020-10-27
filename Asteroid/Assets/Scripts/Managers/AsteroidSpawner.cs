@@ -29,6 +29,10 @@ public class AsteroidSpawner : MonoBehaviour {
         }
     }
 
+    /**
+     * Spawn an asteroid depends on spawnArray list
+     * In a torus around the screen
+     */
     IEnumerator SpawnAsteroid(SpawnItem item) {
         while (!gameManager.isGameOver) {
             yield return new WaitForSeconds(item.spawnSpeed);
@@ -46,6 +50,9 @@ public class AsteroidSpawner : MonoBehaviour {
         }
     }
 
+    /**
+     * Get a Vector2 position in a torus of a certain radius
+     */
     Vector2 GetRandomPositionInTorus() {
         float rndAngle = Random.value * 6.28f; // use radians, saves converting degrees to radians
 

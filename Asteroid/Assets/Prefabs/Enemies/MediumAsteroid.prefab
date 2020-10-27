@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5890215170322528242}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.76, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -117,7 +117,9 @@ MonoBehaviour:
   deathEffect: {fileID: 2072576476447276379, guid: 7a0ac16e4fb1a994085bf65f20d81806, type: 3}
   score: 50
   enemyType: 2
-  smallAsteroids: {fileID: 0}
+  childSpawn: {fileID: 0}
+  count: 2
+  childSpeed: 10
 --- !u!50 &296100937054273022
 Rigidbody2D:
   serializedVersion: 4

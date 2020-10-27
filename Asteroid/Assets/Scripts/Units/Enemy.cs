@@ -5,14 +5,21 @@ public class Enemy : HealthUnit {
     public int score = 50;
     public EnemyType enemyType;
     ScoreManager scoreManager;
+    GameManager gameManager;
 
-    [Header("Optional"), Space(10)]
+    [Header("SpawnChild"), Space(10)]
     public GameObject childSpawn;
     public int count = 2;
     public int childSpeed = 10;
 
     private void Start() {
         scoreManager = ScoreManager.GetInstance;
+        gameManager = GameManager.GetInstance;
+    }
+
+    private void Update() {
+        if (gameManager.isGameOver)
+            Destroy(gameObject);
     }
 
     protected override void Die() {
@@ -29,7 +36,7 @@ public class Enemy : HealthUnit {
         for (int i = 0; i < count; i++) {
             GameObject childAsteroid = Instantiate(childSpawn, transform.position, Quaternion.identity);
             childAsteroid.GetComponent<Rigidbody2D>()
-                .AddForce(new Vector2(Random.Range(-1, 1), Random.Range(-1, 1)) * childSpeed, ForceMode2D.Impulse);
+                .AddForce(new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)) * childSpeed, ForceMode2D.Impulse);
         }
     }
 
