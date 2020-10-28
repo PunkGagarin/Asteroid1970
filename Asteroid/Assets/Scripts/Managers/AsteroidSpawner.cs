@@ -15,6 +15,8 @@ public class AsteroidSpawner : MonoBehaviour {
     public float leftSide = 18.5f;
     public float topSide = 14f;
     public float wallRadius = 1.5f;
+    public float clearTime = 15f;
+    public float movePointRange = 10f;
 
     float innerRadius;
     GameManager gameManager;
@@ -40,13 +42,13 @@ public class AsteroidSpawner : MonoBehaviour {
             GameObject gameOBject = Instantiate(item.spawnPrefab, GetRandomPositionInTorus(), Quaternion.identity);
 
             Vector2 movePoint = Vector2.right;
-            movePoint.x += Random.Range(-10f, 10f);
+            movePoint.x += Random.Range(-movePointRange, movePointRange);
             Vector2 direction = new Vector2(movePoint.x - gameOBject.transform.position.x, movePoint.y - gameOBject.transform.position.y);
 
             Rigidbody2D enemyRb = gameOBject.GetComponent<Rigidbody2D>();
             enemyRb.AddForce(direction * item.speed, ForceMode2D.Impulse);
 
-            Destroy(gameOBject, 10f);
+            Destroy(gameOBject, clearTime);
         }
     }
 

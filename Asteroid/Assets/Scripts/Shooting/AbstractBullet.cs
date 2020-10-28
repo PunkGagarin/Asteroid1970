@@ -1,9 +1,7 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Bullet : MonoBehaviour {
-
-    public int damage = 60;
+public class AbstractBullet<T> : MonoBehaviour where T : HealthUnit {
+    public int damage;
     public GameObject hitEffect;
 
     void OnTriggerEnter2D(Collider2D collision) {
@@ -12,11 +10,10 @@ public class Bullet : MonoBehaviour {
             Destroy(hitEffect, 1f);
         }
 
-        Enemy enemy = collision.GetComponent<Enemy>();
+        T enemy = collision.GetComponent<T>();
         if (enemy != null) {
             enemy.TakeDamage(damage);
         }
-
         Destroy(gameObject);
     }
 }

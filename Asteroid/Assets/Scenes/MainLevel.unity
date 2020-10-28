@@ -1111,7 +1111,7 @@ MonoBehaviour:
     speed: 0.8
   - spawnPrefab: {fileID: 2316402426212685139, guid: 4a89c778108166c4c9a3ba1e48e26032, type: 3}
     spawnSpeed: 10
-    speed: 0.3
+    speed: 0.2
   - spawnPrefab: {fileID: 3899105917060380729, guid: b8e8c7a430cc3b24fbd9a431c6e5dea0, type: 3}
     spawnSpeed: 2.5
     speed: 0.8
@@ -1121,15 +1121,17 @@ MonoBehaviour:
   - spawnPrefab: {fileID: 8391299118151159566, guid: b0ac6911c84d7814faa478a527da6393, type: 3}
     spawnSpeed: 13
     speed: 0.4
-  - spawnPrefab: {fileID: 3899105917060380729, guid: b8e8c7a430cc3b24fbd9a431c6e5dea0, type: 3}
-    spawnSpeed: 7
-    speed: 0.5
   - spawnPrefab: {fileID: 2316402426212685139, guid: 4a89c778108166c4c9a3ba1e48e26032, type: 3}
     spawnSpeed: 25
-    speed: 0.3
+    speed: 0.25
+  - spawnPrefab: {fileID: 5890215170322528242, guid: 4a1bf7a76fa1b87458c66cb57e5086cd, type: 3}
+    spawnSpeed: 11
+    speed: 0.6
   leftSide: 19.5
   topSide: 15
   wallRadius: 1.5
+  clearTime: 15
+  movePointRange: 10
 --- !u!1 &1273326022
 GameObject:
   m_ObjectHideFlags: 0
